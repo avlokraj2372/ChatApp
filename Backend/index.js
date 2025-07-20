@@ -14,7 +14,7 @@ dotenv.config();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-  origin: "http://localhost:5173",  // must be specific, not "*"
+  origin: ["http://localhost:5173","https://chat-app-five-gilt-10.vercel.app"],  // must be specific, not "*"
   credentials: true                // allow cookies/headers
 }));
 
