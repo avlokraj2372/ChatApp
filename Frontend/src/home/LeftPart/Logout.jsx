@@ -6,11 +6,16 @@ import toast from "react-hot-toast";
 import { RiLogoutCircleLine } from "react-icons/ri";
 
 function Logout() {
-    const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const handleLogout = async () => {
     setLoading(true);
     try {
-      const res = await axios.post("https://chatapp-nnoo.onrender.com/user/logout");
+      const res = await axios.post(
+        "https://chatapp-nnoo.onrender.com/user/logout",
+        {},
+        { withCredentials: true }
+      );
+
       localStorage.removeItem("ChatApp");
       Cookies.remove("jwt");
       setLoading(false);
@@ -21,12 +26,12 @@ function Logout() {
       toast.error("Error in logging out");
     }
   };
-    return (
-      <div className=" h-[10vh] bg-transparent">
-        <div>
-          <RiLogoutCircleLine  className="text-5xl text-white hover:bg-slate-700 duration-300 cursor-pointer rounded-full p-2 ml-2 mt-1" onClick={handleLogout} />
-        </div>
+  return (
+    <div className=" h-[10vh] bg-transparent">
+      <div>
+        <RiLogoutCircleLine className="text-5xl text-white hover:bg-slate-700 duration-300 cursor-pointer rounded-full p-2 ml-2 mt-1" onClick={handleLogout} />
       </div>
+    </div>
   );
 }
 
