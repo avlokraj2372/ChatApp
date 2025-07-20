@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "https://chat-app-five-gilt-10.vercel.app", // ✅ Use environment variable
+    origin: "https://chat-app-five-gilt-10.vercel.app", // ✅ Use environment variable
     credentials: true, // allow cookies/headers
   })
 );
