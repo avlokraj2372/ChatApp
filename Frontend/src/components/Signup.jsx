@@ -27,7 +27,7 @@ export const Signup = () => {
     };
 
     try {
-      const response = await axios.post("http://localhost:4002/user/signup", userInfo,  { withCredentials: true });
+      const response = await axios.post("https://chatapp-nnoo.onrender.com/user/signup", userInfo,  { withCredentials: true });
       console.log(response.data);
       if(response.data){
       alert("Signup successful");

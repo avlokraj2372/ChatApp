@@ -12,7 +12,7 @@ const useGetMessage = () => {
       if (selectedConversation && selectedConversation._id) {
         try {
           const res = await axios.get(
-            `http://localhost:4002/message/get/${selectedConversation._id}`,
+            `https://chatapp-nnoo.onrender.com/message/get/${selectedConversation._id}`,
             {
               withCredentials: true,
             }

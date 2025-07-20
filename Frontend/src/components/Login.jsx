@@ -19,7 +19,7 @@ export const Login = () => {
     };
 
     try {
-      const response = await axios.post("http://localhost:4002/user/login", userInfo, { withCredentials: true });
+      const response = await axios.post("https://chatapp-nnoo.onrender.com/user/login", userInfo, { withCredentials: true });
       console.log(response.data);
       alert("Login successful");
       localStorage.setItem("ChatApp", JSON.stringify(response.data)); 

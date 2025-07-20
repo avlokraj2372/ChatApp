@@ -10,7 +10,7 @@ function Logout() {
   const handleLogout = async () => {
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:4002/user/logout");
+      const res = await axios.post("https://chatapp-nnoo.onrender.com/user/logout");
       localStorage.removeItem("ChatApp");
       Cookies.remove("jwt");
       setLoading(false);

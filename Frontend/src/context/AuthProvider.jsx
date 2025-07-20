@@ -15,5 +15,5 @@ export const AuthProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
-// http://localhost:4002
+// https://chatapp-nnoo.onrender.com
 export const useAuth = () => useContext(AuthContext);

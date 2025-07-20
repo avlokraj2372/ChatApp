@@ -8,7 +8,7 @@ function useGetAllUsers() {
   useEffect(() => {
     const getUsers = async () => {
       try {
-        const res = await axios.get("http://localhost:4002/user/allusers", {
+        const res = await axios.get("https://chatapp-nnoo.onrender.com/user/allusers", {
           withCredentials: true, // ✅ Send cookies with request
         });
         setAllUsers(res.data.filteredUsers);

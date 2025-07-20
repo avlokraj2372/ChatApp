@@ -11,7 +11,7 @@ const useSendMessage = () => {
     try {
       // ✅ Store response
       const res = await axios.post(
-        `http://localhost:4002/message/send/${selectedConversation._id}`,
+        `https://chatapp-nnoo.onrender.com/message/send/${selectedConversation._id}`,
         { message },
         {
           withCredentials: true, // ✅ sends cookies (e.g., JWT)
