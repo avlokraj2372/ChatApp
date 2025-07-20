@@ -1,19 +1,20 @@
 import React, { createContext, useContext, useState } from "react";
 import Cookies from "js-cookie";
-export const AuthContext = createContext();
-export const AuthProvider = ({ children }) => {
-  const initialUserState =
-    Cookies.get("jwt") || localStorage.getItem("ChatApp");
 
-  // parse the user data and storing in state.
-  const [authUser, setAuthUser] = useState(
-    initialUserState ? JSON.parse(initialUserState) : undefined
-  );
+export const AuthContext = createContext();
+
+export const AuthProvider = ({ children }) => {
+  // Check for user data in localStorage (not JWT token)
+  const storedUser = localStorage.getItem("ChatApp");
+  const initialUserState = storedUser ? JSON.parse(storedUser) : null;
+
+  const [authUser, setAuthUser] = useState(initialUserState);
+
   return (
     <AuthContext.Provider value={[authUser, setAuthUser]}>
       {children}
     </AuthContext.Provider>
   );
 };
-// https://chatapp-nnoo.onrender.com
+
 export const useAuth = () => useContext(AuthContext);
