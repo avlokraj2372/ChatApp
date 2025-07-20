@@ -6,7 +6,7 @@ const createTokenAndSaveCookie = (userId, res) => {
 
   res.cookie("jwt", token, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production", // ✅ Set to true in production
+    secure: true,           // ✅ Required for HTTPS domains
     sameSite: "none",       // ✅ Required for cross-origin requests
     maxAge: 10 * 24 * 60 * 60 * 1000, // Optional: 10 days
   });

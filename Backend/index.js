@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "https://chat-app-five-gilt-10.vercel.app", // ✅ Use environment variable
+    origin: ["https://chat-app-five-gilt-10.vercel.app", "http://localhost:5173", "http://localhost:3000"], // ✅ Allow multiple origins
     credentials: true, // allow cookies/headers
   })
 );
